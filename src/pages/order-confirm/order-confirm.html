@@ -1,0 +1,44 @@
+<!--
+  Generated template for the OrderConfirmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>确认订单</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <!-- 收货人信息 -->
+    <ion-item text-wrap>
+      <ion-avatar item-start>
+        <ion-icon name="pin"></ion-icon>
+      </ion-avatar>
+      <h3>收货人:{{3+2}}</h3>
+      <p>收货地址:北京市 海淀区 大钟寺123号 139366668888</p>
+      <button item-end ion-button clear color="light">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+    <hr/>
+    <!-- 产品信息 -->
+    <ion-item *ngFor="let p of productList">
+      <ion-thumbnail item-start>
+        <img [src]="'assets/'+p.pic" />
+      </ion-thumbnail>
+      <h3>{{p.title}}</h3>
+      <p>{{p.details}}</p>
+      <h3 style="color:red">￥{{p.price+"x"+p.count}}</h3>
+    </ion-item>
+
+    <hr/>
+    <button ion-button block (click)="pay()" color="secondary" round>在线支付</button>
+  </ion-list>
+
+</ion-content>

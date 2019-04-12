@@ -1,0 +1,45 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>用户名</ion-label>
+      <ion-input [(ngModel)]="uname" [formControl]="uNameControl"></ion-input>
+      <ion-icon item-end name='checkmark' color='secondary' *ngIf="isuNameValid"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>密码</ion-label>
+      <ion-input [(ngModel)]="upwd" type="password" [formControl]="uPwdControler" ></ion-input>
+      <ion-icon item-end name='checkmark' color='secondary' *ngIf="isuPwdValid"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>确认密码</ion-label>
+      <ion-input [(ngModel)]="rupwd" type="password"  [formControl]="ruPwdControler"></ion-input>
+      <ion-icon item-end name='checkmark' color='secondary' *ngIf="isrupwdValid "></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>手机</ion-label>
+      <ion-input [(ngModel)]="uphone" [formControl]="uPhoneControler"></ion-input>
+      <ion-icon item-end name='checkmark' *ngIf="isuphoneValid" color='secondary'></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>邮箱</ion-label>
+      <ion-input [(ngModel)]="uemail" [formControl]="uEmailControler"></ion-input>
+      <ion-icon item-end name='checkmark' *ngIf="isuemailValid" color='secondary'></ion-icon>
+    </ion-item>
+  </ion-list>
+  <button ion-button color='danger' block (click)="doRegister()">注册</button>
+</ion-content>
